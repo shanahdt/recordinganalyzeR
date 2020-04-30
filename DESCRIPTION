@@ -1,0 +1,18 @@
+Package: recordinganalyzeR
+Type: Package
+Title: recordinganalyzeR
+Version: 0.1.0
+Author: Daniel Shanahan
+Maintainer: Daniel Shanahan <shanahan.37@osu.edu>
+Description: This package is a collection of functions for analyzing recordings. 
+License: CC-BY
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    ggrepel,
+    ggplot2,
+    Rcpp (>= 1.0.4.6),
+    dplyr,
+    magrittr
+LinkingTo: Rcpp
+RoxygenNote: 7.1.0

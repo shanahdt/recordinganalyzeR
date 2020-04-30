@@ -1,0 +1,6 @@
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
+importFrom(magrittr,"%>%")
+importFrom(dplyr, group_by, summarise)
+importFrom(ggplot2, geom_point, stat_smooth)
+useDynLib(recordinganalyzeR, .registration = TRUE)
