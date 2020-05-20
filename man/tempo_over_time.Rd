@@ -6,10 +6,6 @@
 \usage{
 tempo_over_time(
   data,
-  year,
-  average_tempo,
-  performer,
-  flex,
   method = "lm",
   big_title = "Data over Time",
   brief_subtitle = "Average Tempo and Flexibility",

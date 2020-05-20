@@ -6,11 +6,10 @@
 #' @param year The year column.
 #'
 #' @example
-#'
 #' tempo_flex(movement1, conductors)
 #'
 
-tempo_flex <- function(data, performer=F){
+tempo_flex <- function(data, performer="performer", tempo="tempo"){
   group_by(data, performer) %>%
   summarise(
     average_tempo = mean(tempo, na.rm = T),

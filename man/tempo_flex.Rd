@@ -5,7 +5,7 @@
 \title{This function provides a flexibility rating (as measured with a standard
 deviation of the entire unit given). It uses dplyr, and requires the year.}
 \usage{
-tempo_flex(data, performer = F)
+tempo_flex(data, performer = "performer", tempo = "tempo")
 }
 \arguments{
 \item{tempo}{The bpm data; it's own column.}
