@@ -8,6 +8,7 @@
 #' @param year, The year, or any other timeframe variable. Required.
 #' @param average_tempo, The average tempo, as provided in the dataframe.
 #' @param flex, flexibility, as determined by the standard deviation of the entire unit.
+#' @export
 
 tempo_over_time <- function(data,
                             method = "lm",

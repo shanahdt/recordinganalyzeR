@@ -1,4 +1,4 @@
-exportPattern("^[[:alpha:]]+_")
+exportPattern("^[[:alpha:]]+")
 importFrom(Rcpp, evalCpp)
 importFrom(magrittr,"%>%")
 importFrom(dplyr, group_by, summarise)
