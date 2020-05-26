@@ -12,7 +12,7 @@
 #' @author Daniel Shanahan
 #' @export
 
-avg_tempo <- function(df, tempo, performer, year, add_flex = F){
+avg_tempo <- function(df, tempo, performer, year, add_flex=F){
   no_flex <- function(){
     df %>%
       group_by(performer) %>%
@@ -25,6 +25,7 @@ avg_tempo <- function(df, tempo, performer, year, add_flex = F){
       summarise(flex=sd(tempo, na.rm=T), year=mean(year), tempo=mean(tempo))
 
   }
+
   if(add_flex==FALSE){
     return(as.data.frame(no_flex()))
   }
