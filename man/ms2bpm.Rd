@@ -4,7 +4,7 @@
 \alias{ms2bpm}
 \title{Milliseconds to Beats per Minute.}
 \usage{
-ms2bpm(df, ms, cumulative = F)
+ms2bpm(df, ms, cumulative = F, seconds = T)
 }
 \arguments{
 \item{ms}{millisecond column name. This can be set up to either be consistent onsets between beats,

@@ -13,18 +13,30 @@
 #' @author Daniel Shanahan
 #' @date May 2020
 
-ms2bpm <- function(df, ms, cumulative=F){
+ms2bpm <- function(df, ms, cumulative=F, seconds=T){
 
       non_cumulative <- function(){
+        # seconds <- enquo(seconds)
         ms <- enquo(ms)
+        if(seconds==T){
+          new_tempo <- ms*1000}
+        else{
+          new_tempo <- ms
+        }
         df %>%
-        mutate(bpm = 60000/!!ms)
+        mutate(bpm = 60000/new_tempo)
       }
 
       accruing <- function(){
-        ms <- enquo(ms)
+        # ms <- enquo(ms)
+        # seconds <- enquo(seconds)
+        if(seconds==T){
+        new_tempo <- ms*1000}
+        else{
+          new_tempo <-!ms
+        }
         df %>%
-          mutate(diff = ifelse(!!ms == lag(!!ms), !!ms, !!ms - lag(!!ms)))
+          mutate(diff = ifelse(new_tempo == lag(new_tempo), new_tempo, new_tempo - lag(new_tempo)))
       } %>%
         mutate(bpm = 60000/diff)
 
