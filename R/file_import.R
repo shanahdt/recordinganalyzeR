@@ -7,14 +7,14 @@
 #' @export
 
 import_all <- function(filetype){
-  temp <- list.files(pattern=filetype)
-  myfiles <- lapply(temp, tempo_calc)
 
   tempo_calc <- function(x, delim="\t"){
     my_file <- read.delim(x, sep=delim, header=F)
     my_file$filename <- tools::file_path_sans_ext(basename(x))
     ms2bpm(my_file, ms=my_file$V1, cumulative=T, seconds = T)
   }
+  temp <- list.files(pattern=filetype)
+  myfiles <- lapply(temp, tempo_calc)
   tmp <- lapply(temp, tempo_calc)
   return(as.data.frame(do.call(rbind, tmp)))
 }
@@ -22,4 +22,4 @@ import_all <- function(filetype){
 # tmp <- lapply(temp, tempo_calc)
 # library(tidyverse)
 # df <- as.data.frame(do.call(rbind, tmp))
-# df %>% separate(filename, c("year", "perfomer", "mvt"))
+#df %>% separate(filename, c("year", "perfomer", "mvt"))
